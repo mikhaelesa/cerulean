@@ -7,7 +7,12 @@ export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	size?: TButtonSize;
 }
 
-export const Button = ({ children, size = "regular", variant = "primary" }: IButtonProps) => {
+export const Button = ({
+	children,
+	size = "regular",
+	variant = "primary",
+	...props
+}: IButtonProps) => {
 	return (
 		<button
 			className={[
@@ -27,6 +32,7 @@ export const Button = ({ children, size = "regular", variant = "primary" }: IBut
 					? "Button--Nude"
 					: null,
 			].join(" ")}
+			{...props}
 		>
 			{children}
 		</button>
