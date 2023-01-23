@@ -1,0 +1,31 @@
+{
+	"extends": [
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"eslint:recommended",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
+	],
+	"plugins": ["react", "@typescript-eslint"],
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module"
+	},
+	"rules": {
+		// Extra rules
+		"quotes": ["error", "double"],
+		"no-console": "warn",
+		"no-empty-function": "error",
+		"semi": ["error", "always"],
+		"arrow-parens": ["error", "always"],
+		"arrow-spacing": "error",
+		"no-mixed-spaces-and-tabs": "off",
+
+		// React specific eslint configs
+		"react/function-component-definition": ["error", { "namedComponents": "arrow-function" }],
+		"react/destructuring-assignment": ["error", "always", { "destructureInSignature": "always" }],
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off"
+	}
+}
