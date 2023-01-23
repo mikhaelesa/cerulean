@@ -1,0 +1,57 @@
+@use "src/styles/abstracts/variables" as v;
+@use "src/styles/abstracts/typo-mixins" as t;
+
+.Button {
+	padding: 10px 20px;
+	outline: none;
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+	&.Button--Primary {
+		transition: background-color 0.3s ease-in-out;
+		background-color: v.$primary-100;
+		color: #fff;
+		&:hover {
+			background-color: v.$primary-60;
+		}
+		&:disabled {
+			background-color: v.$primary-20;
+			cursor: not-allowed;
+		}
+	}
+	&.Button--Outlined {
+		transition: border-color 0.3s ease-in-out;
+		background-color: transparent;
+		color: v.$primary-100;
+		border: 2px solid v.$primary-60;
+		&:hover {
+			border-color: v.$primary-100;
+		}
+		&:disabled {
+			border-color: v.$primary-20;
+			color: v.$primary-20;
+			cursor: not-allowed;
+		}
+	}
+	&.Button--Nude {
+		background-color: transparent;
+		color: v.$primary-100;
+		transition: color 0.3s ease-in-out;
+		&:hover {
+			color: v.$primary-60;
+		}
+		&:disabled {
+			color: v.$primary-20;
+			cursor: not-allowed;
+		}
+	}
+	&.Button--Large {
+		@include t.button-1;
+	}
+	&.Button--Regular {
+		@include t.button-2;
+	}
+	&.Button--Small {
+		@include t.button-3;
+	}
+}
