@@ -15,6 +15,7 @@ export const Button = ({
 }: IButtonProps) => {
 	return (
 		<button
+			{...props}
 			className={[
 				"Button",
 				size === "large"
@@ -32,7 +33,6 @@ export const Button = ({
 					? "Button--Nude"
 					: null,
 			].join(" ")}
-			{...props}
 		>
 			{children}
 		</button>
