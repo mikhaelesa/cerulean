@@ -5,11 +5,11 @@ export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
 	label?: string;
 }
 
-export const Input = ({ error, label, ...props }: IInputProps) => {
+export const Input = ({ error, label, id, ...props }: IInputProps) => {
 	return (
-		<div className="Input">
-			{label && <label>{label}</label>}
-			<input {...props} />
+		<div className={"Input"}>
+			{label && <label htmlFor={id}>{label}</label>}
+			<input {...props} id={id} className={error ? "Input--Error" : ""} />
 		</div>
 	);
 };

@@ -6,7 +6,8 @@
 	flex-direction: column;
 	gap: 5px;
 	> label {
-		@include t.body-1;
+		@include t.body-2;
+		cursor: pointer;
 	}
 	> input {
 		padding: 10px;
@@ -16,6 +17,13 @@
 		@include t.body-2;
 		&:focus {
 			border-color: v.$primary-100;
+		}
+		&.Input--Error {
+			border-color: v.$danger-100;
+		}
+		&:disabled {
+			border-color: v.$neutral-100;
+			background-color: v.$neutral-20;
 		}
 	}
 }
