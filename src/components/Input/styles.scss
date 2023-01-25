@@ -4,10 +4,13 @@
 .Input {
 	display: flex;
 	flex-direction: column;
-	gap: 5px;
 	> label {
 		@include t.body-2;
+		margin-bottom: 5px;
 		cursor: pointer;
+		> span {
+			color: v.$danger-100;
+		}
 	}
 	> input {
 		padding: 10px;
@@ -25,5 +28,8 @@
 			border-color: v.$neutral-100;
 			background-color: v.$neutral-20;
 		}
+	}
+	.Input--Error--Message {
+		color: v.$danger-100;
 	}
 }
