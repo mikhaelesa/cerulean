@@ -12,3 +12,4 @@ export type TTypographyVariant =
 	| "button-2"
 	| "button-3"
 	| "caption";
+export type TTypographyComponent = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "span";

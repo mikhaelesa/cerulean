@@ -1,20 +1,27 @@
-import { HTMLAttributes, ReactNode } from "react";
-import { TTypographyVariant } from "./types";
+import React, { HTMLAttributes, ReactNode } from "react";
+import { TTypographyComponent, TTypographyVariant } from "./types";
 
-export interface ITypograhpyProps extends HTMLAttributes<HTMLSpanElement> {
+export interface ITypographyProps extends HTMLAttributes<HTMLParagraphElement> {
 	children?: ReactNode;
 	variant?: TTypographyVariant;
+	component?: TTypographyComponent;
 }
 
 export const Typography = ({
-	children,
 	variant = "body-1",
+	component = "p",
+	children,
 	className,
 	...props
-}: ITypograhpyProps) => {
-	return (
-		<span {...props} className={[`Typography--${variant}`, className].join(" ")}>
-			{children}
-		</span>
+}: ITypographyProps) => {
+	const element = React.createElement(
+		component,
+		{
+			...props,
+			className: [`Typography--${variant}`, className && className].join(" "),
+		},
+		children,
 	);
+
+	return element;
 };

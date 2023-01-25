@@ -4,27 +4,27 @@ Provide an easy way to add icon in your app. We use [Ant Design Icons](https://a
 
 ## Usage
 
-```xml
+```jsx
 <!-- Will show a default Check Icon -->
 <Icon />
 ```
 
 If you want to change the icon, simply pass `iconName` props and specify the icon name.
 
-```xml
+```jsx
 <Icon iconName="IcClose" />
 ```
 
 Changing color is super easy
 
-```xml
+```jsx
 <!-- You can also use hex for color -->
 <Icon color="red" />
 ```
 
 Size? Say no more
 
-```xml
+```jsx
 <!-- Size props specifies both width and height -->
 <Icon size={24} />
 
