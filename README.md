@@ -26,7 +26,7 @@ import "@mikhaelesa/cerulean/dist/style.css";
 
 Now use any component in your project
 
-```javascript
+```jsx
 const Home = () => {
 	return (
 		<>
@@ -44,4 +44,11 @@ Test out the design system by using any component available and see if it's work
 
 ## Documentation
 
-All component documentation is in each component folder
+For now, all component documentation is in each component folder
+
+- [Button Documentation](https://github.com/mikhaelesa/cerulean/tree/main/src/components/Button#readme)
+- [Checkbox Documentation](https://github.com/mikhaelesa/cerulean/tree/main/src/components/Checkbox#readme)
+- [Icon Documentation](https://github.com/mikhaelesa/cerulean/tree/main/src/components/Icon#readme)
+- [Input Documentation](https://github.com/mikhaelesa/cerulean/tree/main/src/components/Input#readme)
+- [Typography Documentation](https://github.com/mikhaelesa/cerulean/tree/main/src/components/Typography#readme)
+- [Grid Documentation](https://github.com/mikhaelesa/cerulean/tree/main/src/components/Grid#readme)

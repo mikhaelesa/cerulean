@@ -1,8 +1,26 @@
 {
 	"name": "@mikhaelesa/cerulean",
-	"private": true,
+	"license": "MIT",
 	"version": "0.0.0",
 	"type": "module",
+	"description": "Design system turned into component library that will make your slicing work easier.",
+	"repository": {
+		"type": "git",
+		"directory": "https://github.com/mikhaelesa/cerulean.git"
+	},
+	"author": "Mikhael Esa <mikeul2.gt@gmail.com>",
+	"bugs": {
+		"email": "mikeul2.gt@gmail.com",
+		"url": "https://github.com/mikhaelesa/cerulean/issues"
+	},
+	"homepage": "https://github.com/mikhaelesa/cerulean#readme",
+	"keywords": [
+		"react",
+		"react-component",
+		"component-library",
+		"design-system",
+		"cerulean"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
