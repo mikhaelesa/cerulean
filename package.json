@@ -3,6 +3,10 @@
 	"license": "MIT",
 	"version": "0.1.0",
 	"type": "module",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
 	"description": "Design system turned into component library that will make your slicing work easier.",
 	"repository": {
 		"type": "git",
