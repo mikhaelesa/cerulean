@@ -1,0 +1,71 @@
+@use "src/styles/abstracts/variables" as v;
+
+$columns: (
+	column-1: 1,
+	column-2: 2,
+	column-3: 3,
+	column-4: 4,
+	column-5: 5,
+	column-6: 6,
+	column-7: 7,
+	column-8: 8,
+	column-9: 9,
+	column-10: 10,
+	column-11: 11,
+	column-12: 12,
+);
+
+@each $column in $columns {
+	$index: index($columns, $column);
+	$column: nth($column, 2);
+
+	.StartSm--#{$index} {
+		display: block;
+		grid-column-start: $column;
+	}
+
+	.StartMd--#{$index} {
+		display: block;
+		@media (min-width: v.$md) {
+			grid-column-start: $column;
+		}
+	}
+
+	.Start--#{$index} {
+		display: block;
+		@media (min-width: v.$lg) {
+			grid-column-start: $column;
+		}
+	}
+
+	.EndSm--#{$index} {
+		display: block;
+		grid-column-end: span $column;
+	}
+
+	.EndMd--#{$index} {
+		display: block;
+		@media (min-width: v.$md) {
+			grid-column-end: span $column;
+		}
+	}
+
+	.End--#{$index} {
+		display: block;
+		@media (min-width: v.$lg) {
+			grid-column-end: span $column;
+		}
+	}
+}
+
+.Grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 30px;
+	@media (min-width: v.$md) {
+		grid-template-columns: repeat(8, 1fr);
+	}
+	@media (min-width: v.$lg) {
+		grid-template-columns: repeat(12, 1fr);
+	}
+}

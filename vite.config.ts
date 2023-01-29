@@ -1,12 +1,12 @@
-import { resolve } from "node:path";
-
 import react from "@vitejs/plugin-react";
+import { resolve } from "node:path";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import EsLint from "vite-plugin-linter";
 import tsConfigPaths from "vite-tsconfig-paths";
-const { EsLinter, linterPlugin } = EsLint;
 import * as packageJson from "./package.json";
+const { EsLinter, linterPlugin } = EsLint;
+
 // https://vitejs.dev/config/
 export default defineConfig((configEnv) => ({
 	plugins: [
@@ -28,7 +28,10 @@ export default defineConfig((configEnv) => ({
 			fileName: (format) => `cerulean.${format}.js`,
 		},
 		rollupOptions: {
-			external: [...Object.keys(packageJson.peerDependencies)],
+			external: [
+				...Object.keys(packageJson.peerDependencies),
+				...Object.keys(packageJson.dependencies),
+			],
 		},
 	},
 }));
