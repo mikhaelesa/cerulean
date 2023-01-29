@@ -1,0 +1,53 @@
+@use "src/styles/abstracts/typo-mixins" as t;
+
+.Typography--heading-1 {
+	@include t.heading-1;
+}
+
+.Typography--heading-2 {
+	@include t.heading-2;
+}
+
+.Typography--heading-3 {
+	@include t.heading-3;
+}
+
+.Typography--subheading-1 {
+	@include t.subheading-1;
+}
+
+.Typography--subheading-2 {
+	@include t.subheading-2;
+}
+
+.Typography--subheading-3 {
+	@include t.subheading-3;
+}
+
+.Typography--body-1 {
+	@include t.body-1;
+}
+
+.Typography--body-2 {
+	@include t.body-2;
+}
+
+.Typography--body-3 {
+	@include t.body-3;
+}
+
+.Typography--button-1 {
+	@include t.button-1;
+}
+
+.Typography--button-2 {
+	@include t.button-2;
+}
+
+.Typography--button-3 {
+	@include t.button-3;
+}
+
+.Typography--caption {
+	@include t.caption;
+}

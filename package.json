@@ -1,56 +1,82 @@
 {
-  "name": "@mikhaelesa/cerulean",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "lint": "eslint 'src/**/*.{ts,tsx}'",
-    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
-    "format": "prettier --write src/**/*.{ts,tsx,css} --config ./.prettierrc",
-    "prepare": "husky install"
-  },
-  "devDependencies": {
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.26",
-    "@types/react-dom": "18.0.9",
-    "@typescript-eslint/eslint-plugin": "5.48.2",
-    "@typescript-eslint/parser": "5.48.2",
-    "@vitejs/plugin-react": "3.0.0",
-    "babel-eslint": "10.1.0",
-    "eslint": "8.0.1",
-    "eslint-plugin-react": "7.32.1",
-    "eslint-plugin-react-hooks": "4.6.0",
-    "husky": "8.0.0",
-    "lint-staged": "13.1.0",
-    "node": "19.4.0",
-    "prettier": "2.8.3",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
-    "sass": "^1.57.1",
-    "typescript": "*",
-    "vite": "4.0.0",
-    "vite-plugin-dts": "1.7.1",
-    "vite-plugin-linter": "2.0.2",
-    "vite-tsconfig-paths": "4.0.5"
-  },
-  "peerDependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "files": [
-    "dist"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/cerulean.es.js",
-      "require": "./dist/cerulean.umd.js"
-    },
-    "./dist/style.css": "./dist/style.css"
-  },
-  "main": "./dist/cerulean.umd.js",
-  "module": "./dist/cerulean.es.js",
-  "types": "./dist/index.d.ts"
+	"name": "@mikhaelesa/cerulean",
+	"license": "MIT",
+	"version": "0.1.0",
+	"type": "module",
+	"private": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"description": "Design system turned into component library that will make your slicing work easier.",
+	"repository": {
+		"type": "git",
+		"directory": "https://github.com/mikhaelesa/cerulean.git"
+	},
+	"author": "Mikhael Esa <mikeul2.gt@gmail.com>",
+	"bugs": {
+		"email": "mikeul2.gt@gmail.com",
+		"url": "https://github.com/mikhaelesa/cerulean/issues"
+	},
+	"homepage": "https://github.com/mikhaelesa/cerulean#readme",
+	"keywords": [
+		"react",
+		"react-component",
+		"component-library",
+		"design-system",
+		"cerulean"
+	],
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"build:watch": "tsc && vite build --watch",
+		"preview": "vite preview",
+		"lint": "eslint 'src/**/*.{ts,tsx}'",
+		"lint:fix": "eslint --fix 'src/**/*.{ts,tsx}'",
+		"format": "prettier --write src/**/*.{ts,tsx,css} --config ./.prettierrc",
+		"prepare": "husky install"
+	},
+	"dependencies": {
+		"clsx": "1.2.1"
+	},
+	"devDependencies": {
+		"@types/node": "18.11.18",
+		"@types/react": "18.0.26",
+		"@types/react-dom": "18.0.9",
+		"@typescript-eslint/eslint-plugin": "5.48.2",
+		"@typescript-eslint/parser": "5.48.2",
+		"@vitejs/plugin-react": "3.0.0",
+		"babel-eslint": "10.1.0",
+		"eslint": "8.0.1",
+		"eslint-plugin-react": "7.32.1",
+		"eslint-plugin-react-hooks": "4.6.0",
+		"husky": "8.0.0",
+		"lint-staged": "13.1.0",
+		"node": "19.4.0",
+		"prettier": "2.8.3",
+		"react": "18.2.0",
+		"react-dom": "18.2.0",
+		"sass": "1.57.1",
+		"typescript": "*",
+		"vite": "4.0.0",
+		"vite-plugin-dts": "1.7.1",
+		"vite-plugin-linter": "2.0.2",
+		"vite-tsconfig-paths": "4.0.5"
+	},
+	"peerDependencies": {
+		"react": ">=16",
+		"react-dom": ">=16"
+	},
+	"files": [
+		"dist"
+	],
+	"exports": {
+		".": {
+			"import": "./dist/cerulean.es.js",
+			"require": "./dist/cerulean.umd.js"
+		},
+		"./dist/style.css": "./dist/style.css"
+	},
+	"main": "./dist/cerulean.umd.js",
+	"module": "./dist/cerulean.es.js",
+	"types": "./dist/index.d.ts"
 }

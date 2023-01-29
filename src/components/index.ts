@@ -1,3 +1,7 @@
-export type { IButtonProps } from "./Button";
-export { default } from "./Button";
-import "./styles.css";
+export * from "./Button";
+export * from "./Checkbox";
+export * from "./Grid";
+export * from "./Icon";
+export * from "./Input";
+export * from "./Typography";
+import "../styles/globals.scss";
