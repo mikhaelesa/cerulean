@@ -1,0 +1,46 @@
+@use "src/styles/abstracts/variables" as v;
+@use "src/styles/abstracts/typo-mixins" as t;
+
+.Label {
+	@include t.body-2;
+}
+
+.Input {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+}
+
+.Checkbox {
+	border-radius: 5px;
+	display: inline-block;
+	background: #fff;
+	border: 1px v.$primary-100 solid;
+	padding: 3px;
+	vertical-align: middle;
+	margin-right: 5px;
+	cursor: pointer;
+	.Icon > svg {
+		color: transparent;
+	}
+	&.Checkbox--Active {
+		background: v.$primary-100;
+		.Icon > svg {
+			color: #fff;
+		}
+	}
+	&.Checkbox--Disabled {
+		cursor: not-allowed;
+		border-color: v.$primary-20;
+	}
+	&.Checkbox--Active--Disabled {
+		cursor: not-allowed;
+		border-color: v.$primary-20;
+		background-color: v.$primary-20;
+		.Icon > svg {
+			color: #fff;
+		}
+	}
+}
