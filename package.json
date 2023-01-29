@@ -1,7 +1,7 @@
 {
 	"name": "@mikhaelesa/cerulean",
 	"license": "MIT",
-	"version": "0.0.0",
+	"version": "0.0.1",
 	"type": "module",
 	"description": "Design system turned into component library that will make your slicing work easier.",
 	"repository": {
@@ -51,7 +51,7 @@
 		"prettier": "2.8.3",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"sass": "^1.57.1",
+		"sass": "1.57.1",
 		"typescript": "*",
 		"vite": "4.0.0",
 		"vite-plugin-dts": "1.7.1",
@@ -59,8 +59,8 @@
 		"vite-tsconfig-paths": "4.0.5"
 	},
 	"peerDependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react": ">=16",
+		"react-dom": ">=16"
 	},
 	"files": [
 		"dist"
