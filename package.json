@@ -1,8 +1,26 @@
 {
 	"name": "@mikhaelesa/cerulean",
-	"private": true,
-	"version": "0.0.0",
+	"license": "MIT",
+	"version": "0.0.1",
 	"type": "module",
+	"description": "Design system turned into component library that will make your slicing work easier.",
+	"repository": {
+		"type": "git",
+		"directory": "https://github.com/mikhaelesa/cerulean.git"
+	},
+	"author": "Mikhael Esa <mikeul2.gt@gmail.com>",
+	"bugs": {
+		"email": "mikeul2.gt@gmail.com",
+		"url": "https://github.com/mikhaelesa/cerulean/issues"
+	},
+	"homepage": "https://github.com/mikhaelesa/cerulean#readme",
+	"keywords": [
+		"react",
+		"react-component",
+		"component-library",
+		"design-system",
+		"cerulean"
+	],
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
@@ -33,7 +51,7 @@
 		"prettier": "2.8.3",
 		"react": "18.2.0",
 		"react-dom": "18.2.0",
-		"sass": "^1.57.1",
+		"sass": "1.57.1",
 		"typescript": "*",
 		"vite": "4.0.0",
 		"vite-plugin-dts": "1.7.1",
@@ -41,8 +59,8 @@
 		"vite-tsconfig-paths": "4.0.5"
 	},
 	"peerDependencies": {
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"react": ">=16",
+		"react-dom": ">=16"
 	},
 	"files": [
 		"dist"
