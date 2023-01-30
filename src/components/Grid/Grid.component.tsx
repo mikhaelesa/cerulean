@@ -31,11 +31,11 @@ export const Grid = ({
 			className={clsx(
 				!start && !end && !asItem && "Grid",
 				startSm && `StartSm--${startSm}`,
-				endSm && startSm && endSm > startSm && `EndSm--${endSm}`,
+				endSm && `EndSm--${endSm}`,
 				startMd && `StartMd--${startMd}`,
-				endMd && startMd && endMd > startMd && `EndMd--${endMd}`,
+				endMd && `EndMd--${endMd}`,
 				start && `Start--${start}`,
-				end && start && end > start && `End--${end}`,
+				end && `End--${end}`,
 				className,
 			)}
 		>
