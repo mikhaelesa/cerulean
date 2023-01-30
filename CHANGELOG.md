@@ -1,5 +1,11 @@
 # Changelog
 
+## V0.1.1
+
+### Fixed
+
+Small fix on Grid component `end` props doesn't accept value smaller than the `start`.
+
 ## V0.1.0
 
 This marks as the first release of this package. We have added some core components and we will keep improving this package.
