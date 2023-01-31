@@ -7,6 +7,10 @@
 	border-radius: 5px;
 	border: none;
 	cursor: pointer;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: center;
 	&.Button--Primary {
 		transition: background-color 0.3s ease-in-out;
 		background-color: v.$primary-100;
@@ -50,8 +54,16 @@
 	}
 	&.Button--Regular {
 		@include t.button-2;
+		svg {
+			width: 20px;
+			height: 20px;
+		}
 	}
 	&.Button--Small {
 		@include t.button-3;
+		svg {
+			width: 18px;
+			height: 18px;
+		}
 	}
 }

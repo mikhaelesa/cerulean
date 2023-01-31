@@ -1,10 +1,15 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
+import { Icon, TIconName } from "../Icon";
 import { TButtonSize, TButtonVariant } from "./types";
 
 export interface IButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children?: ReactNode;
 	variant?: TButtonVariant;
 	size?: TButtonSize;
+	iconLeft?: TIconName;
+	iconRight?: TIconName;
+	iconLeftSize?: number;
+	iconRightSize?: number;
 }
 
 export const Button = ({
@@ -12,6 +17,10 @@ export const Button = ({
 	size = "regular",
 	variant = "primary",
 	className,
+	iconLeft,
+	iconRight,
+	iconLeftSize,
+	iconRightSize,
 	...props
 }: IButtonProps) => {
 	return (
@@ -36,7 +45,17 @@ export const Button = ({
 				className,
 			].join(" ")}
 		>
+			{iconLeft && (
+				<div>
+					<Icon iconName={iconLeft} size={iconLeftSize} />
+				</div>
+			)}
 			{children}
+			{iconRight && (
+				<div>
+					<Icon iconName={iconRight} size={iconRightSize} />
+				</div>
+			)}
 		</button>
 	);
 };
