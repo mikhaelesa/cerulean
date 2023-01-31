@@ -54,8 +54,16 @@
 	}
 	&.Button--Regular {
 		@include t.button-2;
+		svg {
+			width: 20px;
+			height: 20px;
+		}
 	}
 	&.Button--Small {
 		@include t.button-3;
+		svg {
+			width: 18px;
+			height: 18px;
+		}
 	}
 }
