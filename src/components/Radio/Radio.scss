@@ -1,0 +1,45 @@
+@use "src/styles/abstracts/variables" as v;
+
+.Radio {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+.Radio__Input {
+	-webkit-appearance: none;
+	appearance: none;
+	margin: 0;
+	width: 1.8em;
+	height: 1.8em;
+	border: 1px solid v.$primary-100;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&::after {
+		content: "";
+		display: block;
+		border-radius: 50%;
+		transition: 0.3s ease-in-out;
+		width: 0;
+		height: 0;
+	}
+	&:checked {
+		&::after {
+			background-color: v.$primary-100;
+			width: 1.2em;
+			height: 1.2em;
+		}
+		&:disabled {
+			&::after {
+				background-color: v.$primary-20;
+			}
+		}
+	}
+	&:disabled {
+		cursor: not-allowed;
+		border-color: v.$primary-20;
+	}
+}
