@@ -1,27 +1,26 @@
 import clsx from "clsx";
-import { ChangeEvent, FormEvent, InputHTMLAttributes, useState } from "react";
+import { ChangeEvent, FormEvent, TextareaHTMLAttributes, useState } from "react";
 import { Typography } from "../Typography";
 
-export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
-	error?: boolean;
-	errorMessage?: string;
+export interface ITextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 	label?: string;
+	errorMessage?: string;
+	error?: boolean;
 }
-
-export const Input = ({
-	error = false,
-	errorMessage = "Invalid input",
+export const Textarea = ({
 	label,
-	className,
+	error,
+	errorMessage = "Invalid input",
 	id,
+	required,
+	className,
 	onInvalid,
 	onChange,
-	required = false,
 	...props
-}: IInputProps) => {
+}: ITextareaProps) => {
 	const [isInvalid, setIsInvalid] = useState(error);
 
-	const handleOnInvalid = (e: FormEvent<HTMLInputElement>) => {
+	const handleOnInvalid = (e: FormEvent<HTMLTextAreaElement>) => {
 		e.preventDefault();
 		if (onInvalid) {
 			onInvalid(e);
@@ -29,15 +28,14 @@ export const Input = ({
 		setIsInvalid(true);
 	};
 
-	const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+	const handleOnChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
 		if (onChange) {
 			onChange(e);
 		}
 		setIsInvalid(false);
 	};
-
 	return (
-		<div className={clsx("Input", className)}>
+		<div className={clsx("Textarea", className)}>
 			{label && (
 				<label htmlFor={id}>
 					{label}
@@ -48,16 +46,16 @@ export const Input = ({
 					)}
 				</label>
 			)}
-			<input
+			<textarea
 				{...props}
 				id={id}
 				required={required}
-				className={clsx(isInvalid && "Input--Error")}
+				className={clsx(isInvalid && "Textarea--Error")}
 				onInvalid={handleOnInvalid}
 				onChange={handleOnChange}
 			/>
 			{isInvalid && errorMessage && (
-				<Typography className="Input--Error--Message" variant="body-3" component="span">
+				<Typography className="Textarea--Error--Message" variant="body-3" component="span">
 					{errorMessage}
 				</Typography>
 			)}
