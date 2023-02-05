@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import React, { HTMLAttributes, ReactNode } from "react";
 import { TTypographyComponent, TTypographyVariant } from "./types";
 
@@ -18,7 +19,7 @@ export const Typography = ({
 		component,
 		{
 			...props,
-			className: [`Typography--${variant}`, className && className].join(" "),
+			className: clsx(`Typography--${variant}`, className),
 		},
 		children,
 	);
