@@ -7,26 +7,51 @@
 	> label {
 		@include t.body-2;
 		margin-bottom: 5px;
+		color: black;
 		cursor: pointer;
 		> span {
 			color: v.$danger-100;
 		}
 	}
-	> input {
-		padding: 10px;
-		border-radius: 5px;
-		outline: none;
-		border: 1px solid v.$neutral-100;
-		@include t.body-2;
-		&:focus {
-			border-color: v.$primary-100;
+	.Input--Container {
+		position: relative;
+		> input {
+			width: 100%;
+			padding: 10px;
+			border-radius: 5px;
+			outline: none;
+			border: 1px solid v.$neutral-100;
+			@include t.body-2;
+			&:focus {
+				border-color: v.$primary-100;
+				> div {
+					fill: v.$primary-100;
+					color: v.$primary-100;
+					background-color: red;
+				}
+			}
+			&.Input--Error {
+				border-color: v.$danger-100;
+			}
+			&:disabled {
+				border-color: v.$neutral-100;
+				background-color: v.$neutral-20;
+				cursor: not-allowed;
+				+ .Input--Container--Icon {
+					cursor: not-allowed;
+				}
+			}
 		}
-		&.Input--Error {
-			border-color: v.$danger-100;
-		}
-		&:disabled {
-			border-color: v.$neutral-100;
-			background-color: v.$neutral-20;
+		.Input--Container--Icon {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 10px;
+			margin: auto;
+			transform: translateY(25%);
+			&.Input--Container--Icon--Event {
+				cursor: pointer;
+			}
 		}
 	}
 	.Input--Error--Message {

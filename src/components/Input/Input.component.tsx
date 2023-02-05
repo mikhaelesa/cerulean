@@ -1,10 +1,14 @@
+import clsx from "clsx";
 import { ChangeEvent, FormEvent, InputHTMLAttributes, useState } from "react";
+import { Icon, TIconName } from "../Icon";
 import { Typography } from "../Typography";
 
 export interface IInputProps extends InputHTMLAttributes<HTMLInputElement> {
 	error?: boolean;
 	errorMessage?: string;
 	label?: string;
+	iconRight?: TIconName;
+	iconRightEvent?: () => void;
 }
 
 export const Input = ({
@@ -16,6 +20,9 @@ export const Input = ({
 	onInvalid,
 	onChange,
 	required = false,
+	iconRight,
+	iconRightEvent,
+	disabled,
 	...props
 }: IInputProps) => {
 	const [isInvalid, setIsInvalid] = useState(error);
@@ -36,7 +43,7 @@ export const Input = ({
 	};
 
 	return (
-		<div className={["Input", className].join(" ")}>
+		<div className={clsx("Input", className)}>
 			{label && (
 				<label htmlFor={id}>
 					{label}
@@ -47,14 +54,28 @@ export const Input = ({
 					)}
 				</label>
 			)}
-			<input
-				{...props}
-				id={id}
-				required={required}
-				className={isInvalid ? "Input--Error" : ""}
-				onInvalid={handleOnInvalid}
-				onChange={handleOnChange}
-			/>
+			<div className="Input--Container">
+				<input
+					{...props}
+					id={id}
+					disabled={disabled}
+					required={required}
+					className={clsx(isInvalid && "Input--Error")}
+					onInvalid={handleOnInvalid}
+					onChange={handleOnChange}
+				/>
+				{iconRight && (
+					<div
+						className={clsx(
+							"Input--Container--Icon",
+							iconRightEvent && "Input--Container--Icon--Event",
+						)}
+						onClick={!disabled ? iconRightEvent : undefined}
+					>
+						<Icon iconName={iconRight} />
+					</div>
+				)}
+			</div>
 			{isInvalid && errorMessage && (
 				<Typography className="Input--Error--Message" variant="body-3" component="span">
 					{errorMessage}

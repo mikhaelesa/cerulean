@@ -1,0 +1,37 @@
+@use "src/styles/abstracts/variables" as v;
+@use "src/styles/abstracts/typo-mixins" as t;
+
+.Textarea {
+	display: flex;
+	flex-direction: column;
+	> label {
+		@include t.body-2;
+		margin-bottom: 5px;
+		cursor: pointer;
+		> span {
+			color: v.$danger-100;
+		}
+	}
+	> textarea {
+		padding: 10px;
+		min-height: 100px;
+		border-radius: 5px;
+		outline: none;
+		border: 1px solid v.$neutral-100;
+		@include t.body-2;
+		&:focus {
+			border-color: v.$primary-100;
+		}
+		&.Textarea--Error {
+			border-color: v.$danger-100;
+		}
+		&:disabled {
+			border-color: v.$neutral-100;
+			background-color: v.$neutral-20;
+			cursor: not-allowed;
+		}
+	}
+	.Textarea--Error--Message {
+		color: v.$danger-100;
+	}
+}
