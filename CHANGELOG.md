@@ -1,5 +1,25 @@
 # Changelog
 
+## V0.2.0
+
+### Added
+
+Added new components and icons.
+
+- Badge
+- Switch
+- Radio
+- Icon size props for Button component
+- Textarea component
+- Update project's README.md
+
+### Fixed
+
+- Fixed `Checkbox` and `Input` conflicting `className`.
+- Set Textarea `cursor: not-allowed;` when disabled.
+- Managing `className` with [clsx](https://www.npmjs.com/package/clsx).
+- Change `scss` colors from variables to maps.
+
 ## V0.1.1
 
 ### Fixed
