@@ -1,0 +1,37 @@
+@use "src/styles/abstracts/mixins" as m;
+
+.Badge {
+	padding: 4px 8px;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+	width: fit-content;
+	border-radius: 99px;
+	&.Badge--Default {
+		@include m.badgeVariantStyles();
+	}
+	&.Badge--Primary {
+		@include m.badgeVariantStyles(primary);
+	}
+	&.Badge--Success {
+		@include m.badgeVariantStyles(success);
+	}
+	&.Badge--Warning {
+		@include m.badgeVariantStyles(warning);
+	}
+	&.Badge--Danger {
+		@include m.badgeVariantStyles(danger);
+	}
+	.Badge__Text {
+		color: #fff;
+	}
+	.Badge__Icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 99px;
+		width: 20px;
+		height: 20px;
+		cursor: pointer;
+	}
+}
