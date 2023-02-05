@@ -18,6 +18,7 @@ export const Badge = ({
 	text = "Badge",
 	variant = "default",
 	onClickIcon,
+	size = "regular",
 	...props
 }: IBadgeProps) => {
 	const handleClickIcon = (e: MouseEvent<HTMLDivElement>) => {
@@ -32,6 +33,7 @@ export const Badge = ({
 			className={clsx(
 				"Badge",
 				`Badge--${variant ? variant?.charAt(0).toUpperCase() + variant?.slice(1) : "Default"}`,
+				`Badge--${size ? size?.charAt(0).toUpperCase() + size?.slice(1) : "Regular"}`,
 				outlined && "Badge--Outlined",
 			)}
 		>
