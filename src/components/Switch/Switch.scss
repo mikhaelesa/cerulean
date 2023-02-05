@@ -1,28 +1,67 @@
 @use "src/styles/abstracts/variables" as v;
 
+.Switch__Container {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
 .Switch {
 	position: relative;
-	width: 50px;
-	height: 20px;
 	border-radius: 99px;
 	background-color: v.$neutral-20;
 	cursor: pointer;
 	transition: background-color 0.3s ease-in-out;
 	&.Switch--Active {
 		background-color: v.$primary-100;
+		&.Switch--Small {
+			.Switch__Toggler {
+				left: calc(100% - 14px);
+			}
+		}
+		&.Switch--Regular {
+			.Switch__Toggler {
+				left: calc(100% - 18px);
+			}
+		}
+		&.Switch--Large {
+			.Switch__Toggler {
+				left: calc(100% - 22px);
+			}
+		}
+	}
+	&.Switch--Small {
+		width: 32px;
+		height: 16px;
 		.Switch__Toggler {
-			left: calc(100% - 20px);
+			width: 12px;
+			height: 12px;
+		}
+	}
+	&.Switch--Regular {
+		width: 36px;
+		height: 20px;
+		.Switch__Toggler {
+			width: 16px;
+			height: 16px;
+		}
+	}
+	&.Switch--Large {
+		width: 40px;
+		height: 24px;
+		.Switch__Toggler {
+			width: 20px;
+			height: 20px;
 		}
 	}
 }
 
 .Switch__Toggler {
 	transition: left 0.3s ease-in-out;
-	width: 20px;
-	height: 20px;
+	left: 2px;
+	top: 2px;
 	border-radius: 50%;
 	position: absolute;
-	left: 0;
 	background-color: #fff;
 	box-shadow: 0 0 10px rgba($color: #0e2668, $alpha: 0.1);
 }
