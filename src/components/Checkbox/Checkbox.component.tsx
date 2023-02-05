@@ -24,7 +24,7 @@ export const Checkbox = ({
 			<input
 				{...props}
 				disabled={disabled}
-				className="Input"
+				className="Input__Checkbox"
 				type="checkbox"
 				onChange={handleCheck}
 			/>

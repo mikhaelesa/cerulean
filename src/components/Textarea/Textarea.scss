@@ -28,6 +28,7 @@
 		&:disabled {
 			border-color: v.$neutral-100;
 			background-color: v.$neutral-20;
+			cursor: not-allowed;
 		}
 	}
 	.Textarea--Error--Message {
