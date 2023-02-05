@@ -9,6 +9,7 @@ Added new components and icons.
 - Badge
 - Switch
 - Radio
+- Input's Icon
 - Icon size props for Button component
 - Textarea component
 - Update project's README.md
