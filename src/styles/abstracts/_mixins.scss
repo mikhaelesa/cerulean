@@ -1,0 +1,46 @@
+@use "src/styles/abstracts/variables" as v;
+@use "src/styles/abstracts/typo-mixins" as t;
+@use "sass:map";
+
+$transitionDuration: 0.3s;
+
+@mixin badgeVariantStyles($variant: neutral) {
+	background-color: map.get(v.$colors, $variant + "-100");
+	transition: background-color $transitionDuration ease-in-out;
+	&:hover {
+		background-color: map.get(v.$colors, $variant + "-60");
+	}
+	.Badge__Icon {
+		background-color: map.get(v.$colors, $variant + "-20");
+		color: map.get(v.$colors, $variant + "-100");
+	}
+	&.Badge--Outlined {
+		background-color: transparent;
+		border: 1px solid map.get(v.$colors, $variant + "-100");
+		&:hover {
+			background-color: map.get(v.$colors, $variant + "-20");
+		}
+		.Badge__Text {
+			color: map.get(v.$colors, $variant + "-100");
+		}
+		.Badge__Icon {
+			background-color: map.get(v.$colors, $variant + "-100");
+			color: map.get(v.$colors, $variant + "-20");
+		}
+	}
+	&.Badge--Small {
+		.Badge__Text {
+			@include t.body-3;
+		}
+	}
+	&.Badge--Regular {
+		.Badge__Text {
+			@include t.body-2;
+		}
+	}
+	&.Badge--Large {
+		.Badge__Text {
+			@include t.body-1;
+		}
+	}
+}

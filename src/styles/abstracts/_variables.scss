@@ -1,38 +1,76 @@
+@use "sass:map";
+
 // * Colors
+$colors: (
+	// Primary
+	"primary-100": #1e3acb,
+	"primary-80": #3750d2,
+	"primary-60": #5067da,
+	"primary-40": #6a7de1,
+	"primary-20": #7688e5,
+
+	// Neutral
+	"neutral-100": #848484,
+	"neutral-80": #9d9d9d,
+	"neutral-60": #b5b5b5,
+	"neutral-40": #cecece,
+	"neutral-20": #dadada,
+
+	// Danger
+	"danger-100": #f34e4e,
+	"danger-80": #f57171,
+	"danger-60": #f89595,
+	"danger-40": #fab8b8,
+	"danger-20": #fbcaca,
+
+	// Success
+	"success-100": #2fa950,
+	"success-80": #59ba73,
+	"success-60": #82cb96,
+	"success-40": #acddb9,
+	"success-20": #c1e5cb,
+
+	// Warning
+	"warning-100": #f3a62f,
+	"warning-80": #f5b859,
+	"warning-60": #f8ca82,
+	"warning-40": #fadbac,
+	"warning-20": #fbe4c1
+);
 // Primary
-$primary-100: #1e3acb;
-$primary-80: #3750d2;
-$primary-60: #5067da;
-$primary-40: #6a7de1;
-$primary-20: #7688e5;
+$primary-100: map.get($colors, "primary-100");
+$primary-80: map.get($colors, "primary-80");
+$primary-60: map.get($colors, "primary-60");
+$primary-40: map.get($colors, "primary-40");
+$primary-20: map.get($colors, "primary-20");
 
 // Neutral
-$neutral-100: #848484;
-$neutral-80: #9d9d9d;
-$neutral-60: #b5b5b5;
-$neutral-40: #cecece;
-$neutral-20: #dadada;
+$neutral-100: map.get($colors, "neutral-100");
+$neutral-80: map.get($colors, "neutral-80");
+$neutral-60: map.get($colors, "neutral-60");
+$neutral-40: map.get($colors, "neutral-40");
+$neutral-20: map.get($colors, "neutral-20");
 
 // Danger
-$danger-100: #f34e4e;
-$danger-80: #f57171;
-$danger-60: #f89595;
-$danger-40: #fab8b8;
-$danger-20: #fbcaca;
+$danger-100: map.get($colors, "danger-100");
+$danger-80: map.get($colors, "danger-80");
+$danger-60: map.get($colors, "danger-60");
+$danger-40: map.get($colors, "danger-40");
+$danger-20: map.get($colors, "danger-20");
 
 // Success
-$success-100: #2fa950;
-$success-80: #59ba73;
-$success-60: #82cb96;
-$success-40: #acddb9;
-$success-20: #c1e5cb;
+$success-100: map.get($colors, "success-100");
+$success-80: map.get($colors, "success-80");
+$success-60: map.get($colors, "success-60");
+$success-40: map.get($colors, "success-40");
+$success-20: map.get($colors, "success-20");
 
 // Warning
-$warning-100: #f3a62f;
-$warning-80: #f5b859;
-$warning-60: #f8ca82;
-$warning-40: #fadbac;
-$warning-20: #fbe4c1;
+$warning-100: map.get($colors, "warning-100");
+$warning-80: map.get($colors, "warning-80");
+$warning-60: map.get($colors, "warning-60");
+$warning-40: map.get($colors, "warning-40");
+$warning-20: map.get($colors, "warning-20");
 
 // Responsive Design
 $sm: 640px;
