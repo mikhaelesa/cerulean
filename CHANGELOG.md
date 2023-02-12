@@ -1,5 +1,9 @@
 # Changelog
 
+## V0.2.1
+
+Modify vite config and trying to fix types file not appearing on `dist`
+
 ## V0.2.0
 
 ### Added
