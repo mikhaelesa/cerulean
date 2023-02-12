@@ -8,4 +8,5 @@ export * from "./Radio";
 export * from "./Switch";
 export * from "./Textarea";
 export * from "./Typography";
+export type { ITypographyProps, TTypographyComponent, TTypographyVariant } from "./Typography";
 import "../styles/globals.scss";
