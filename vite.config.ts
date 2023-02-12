@@ -17,12 +17,13 @@ export default defineConfig((configEnv) => ({
 			linters: [new EsLinter({ configEnv })],
 		}),
 		dts({
+			insertTypesEntry: true,
 			include: ["src/components"],
 		}),
 	],
 	build: {
 		lib: {
-			entry: resolve(__dirname, "src/index.ts"),
+			entry: resolve(__dirname, "src/components/index.ts"),
 			name: "cerulean",
 			formats: ["es", "umd"],
 			fileName: (format) => `cerulean.${format}.js`,
